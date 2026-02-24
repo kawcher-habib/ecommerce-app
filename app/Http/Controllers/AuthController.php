@@ -36,14 +36,14 @@ class AuthController extends Controller
         // Auto-login after registration
         Auth::login($user);
 
-        return redirect()->route('/');
+        return redirect()->route('dashboard');
     }
 
     // Show login page
     public function showLoginForm()
     {
         if (Auth::check()) {
-            return redirect()->route('/');
+            return redirect()->route('dashboard');
         }
         return view('login');
     }
